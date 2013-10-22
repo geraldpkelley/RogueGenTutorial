@@ -117,7 +117,6 @@ public class rogLevelGenerator : MonoBehaviour {
 							testNum = i;
 							gridSpaceProps = tiles1Way[i].GetComponent<rogGridSpaceProperties>();
 							if (gridSpaceProps.openDirNESW.SequenceEqual (dirCheckResultNESW)){
-								Debug.Log ("hit");
 								Instantiate (tiles1Way[i], new Vector3(checkSpaceXZ[0] * gridUnit, 0, checkSpaceXZ[1] * gridUnit), tiles1Way[i].rotation);
 								i = tiles1Way.Length;
 							}
@@ -127,7 +126,6 @@ public class rogLevelGenerator : MonoBehaviour {
 						for (int i = 0; i < tiles2Way.Length; i++){
 							gridSpaceProps = tiles2Way[i].GetComponent<rogGridSpaceProperties>();
 							if (gridSpaceProps.openDirNESW.SequenceEqual (dirCheckResultNESW)){
-								Debug.Log ("hit");
 								Instantiate (tiles2Way[i], new Vector3(checkSpaceXZ[0] * gridUnit, 0, checkSpaceXZ[1] * gridUnit), tiles2Way[i].rotation);
 								i = tiles2Way.Length;
 							}
@@ -137,7 +135,6 @@ public class rogLevelGenerator : MonoBehaviour {
 						for (int i = 0; i < tiles3Way.Length; i++){
 							gridSpaceProps = tiles3Way[i].GetComponent<rogGridSpaceProperties>();
 							if (gridSpaceProps.openDirNESW.SequenceEqual (dirCheckResultNESW)){
-								Debug.Log ("hit");
 								Instantiate (tiles3Way[i], new Vector3(checkSpaceXZ[0] * gridUnit, 0, checkSpaceXZ[1] * gridUnit), tiles3Way[i].rotation);
 								i = tiles3Way.Length;
 							}
