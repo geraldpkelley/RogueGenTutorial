@@ -28,7 +28,6 @@ public class rogLevelGenerator : MonoBehaviour {
 	public Transform[] tiles4Way = new Transform[1];
 	
 	static public bool generating;
-	Transform spawnTile;
 	public int[] checkSpaceXZ = new int[2];
 	public bool[] dirCheckResultNESW = new bool[4]; // Used to determine where surrounding filled grid spaces are
 	public rogGridSpaceProperties gridSpaceProps;
@@ -118,29 +117,26 @@ public class rogLevelGenerator : MonoBehaviour {
 					CheckDirs (checkSpaceXZ[0], checkSpaceXZ[1]);
 					if (numDirs == 1){
 						//You have the number of open directions and which directions those are. Now cycle through the different spawners and see which one fits
-						for (int i = 0; i < tiles1Way.Length; i++){
-							gridSpaceProps = tiles1Way[i].GetComponent<rogGridSpaceProperties>();
+						foreach (Transform tile in tiles1Way){
+							gridSpaceProps = tile.GetComponent<rogGridSpaceProperties>();
 							if (gridSpaceProps.openDirNESW.SequenceEqual (dirCheckResultNESW)){
-								Instantiate (tiles1Way[i], new Vector3(checkSpaceXZ[0] * gridUnit, 0, checkSpaceXZ[1] * gridUnit), tiles1Way[i].rotation);
-								i = tiles1Way.Length;
+								Instantiate (tile, new Vector3(checkSpaceXZ[0] * gridUnit, 0, checkSpaceXZ[1] * gridUnit), tile.rotation);
 							}
 						}
 					}
 					if (numDirs == 2){
-						for (int i = 0; i < tiles2Way.Length; i++){
-							gridSpaceProps = tiles2Way[i].GetComponent<rogGridSpaceProperties>();
+						foreach (Transform tile in tiles2Way){
+							gridSpaceProps = tile.GetComponent<rogGridSpaceProperties>();
 							if (gridSpaceProps.openDirNESW.SequenceEqual (dirCheckResultNESW)){
-								Instantiate (tiles2Way[i], new Vector3(checkSpaceXZ[0] * gridUnit, 0, checkSpaceXZ[1] * gridUnit), tiles2Way[i].rotation);
-								i = tiles2Way.Length;
+								Instantiate (tile, new Vector3(checkSpaceXZ[0] * gridUnit, 0, checkSpaceXZ[1] * gridUnit), tile.rotation);
 							}
 						}
 					}
 					if (numDirs == 3){
-						for (int i = 0; i < tiles3Way.Length; i++){
-							gridSpaceProps = tiles3Way[i].GetComponent<rogGridSpaceProperties>();
+						foreach (Transform tile in tiles3Way){
+							gridSpaceProps = tile.GetComponent<rogGridSpaceProperties>();
 							if (gridSpaceProps.openDirNESW.SequenceEqual (dirCheckResultNESW)){
-								Instantiate (tiles3Way[i], new Vector3(checkSpaceXZ[0] * gridUnit, 0, checkSpaceXZ[1] * gridUnit), tiles3Way[i].rotation);
-								i = tiles3Way.Length;
+								Instantiate (tile, new Vector3(checkSpaceXZ[0] * gridUnit, 0, checkSpaceXZ[1] * gridUnit), tile.rotation);
 							}
 						}
 					}
