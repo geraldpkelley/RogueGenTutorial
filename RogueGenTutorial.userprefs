@@ -1,8 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\ProjectRogue\Assets\Scripts\LevelGeneration\rogGridSpaceFiller.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\rogGridSpaceProperties.cs">
     <Files>
-      <File FileName="..\ProjectRogue\Assets\Scripts\LevelGeneration\rogGridSpaceFiller.cs" Line="35" Column="19" />
+      <File FileName="Assets\Scripts\rogLevelGenerator.cs" Line="162" Column="34" />
+      <File FileName="Assets\Scripts\rogGridSpaceProperties.cs" Line="6" Column="87" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
